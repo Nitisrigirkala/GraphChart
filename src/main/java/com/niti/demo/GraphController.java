@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class GraphController {
 
+	@GetMapping("/home")
+    public String home() {
+        return "home";  // This returns the "home.html" view
+    }
+
 	@GetMapping("/displayBarGraph")
 	public String barGraph(Model model) {
 		Map<String, Integer> surveyMap = new LinkedHashMap<>();
@@ -27,6 +32,5 @@ public class GraphController {
 		model.addAttribute("fail", 50);
 		return "pieChart";
 	}
-
 }
 
